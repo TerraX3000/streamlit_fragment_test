@@ -6,7 +6,6 @@ from typing import List
 
 def add_food_key_to_session(key):
     print("Running add_food_key_to_session()", key)
-    st.session_state[key] = ""
     food_input_keys: List = st.session_state["food_input_keys"]
     food_input_keys.append(key)
     st.session_state["food_input_keys"] = food_input_keys
@@ -55,7 +54,7 @@ def manage_food_button_and_containers():
         key = get_new_key()
         add_food_key_to_session("food-" + key)
     render_food_containers()
-    print(st.session_state, "\n")
+    print("Session State:", st.session_state, "\n")
 
 
 def get_new_key(k=4):
