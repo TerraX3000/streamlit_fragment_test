@@ -26,8 +26,8 @@ def food_input(key):
 
 
 @st.experimental_fragment()
-def add_food_container(key):
-    print("Running add_food_container()", key)
+def add_edit_remove_food_container(key):
+    print("Running add_edit_remove_food_container()", key)
     container = st.empty()
     with container.expander("Food Details", expanded=True):
         food_input(key)
@@ -44,7 +44,7 @@ def render_food_containers():
     print("Running render_food_containers()")
     food_input_keys: List = st.session_state["food_input_keys"]
     for key in food_input_keys:
-        add_food_container(key)
+        add_edit_remove_food_container(key)
 
 
 @st.experimental_fragment()
