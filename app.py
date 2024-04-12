@@ -90,6 +90,8 @@ def run_full_script():
             print("\n", "Full Script Run -- You Lose!", "\n")
         st.write(
             f'#### Full Script Run Counter: {st.session_state["script_run_counter"]}')
+        st.write(
+            "Goal: allow users to dynamically add/edit/delete food inputs without a full script rerun.")
     st.divider()
     with st.expander("Session State", expanded=False):
         st.json(st.session_state)
